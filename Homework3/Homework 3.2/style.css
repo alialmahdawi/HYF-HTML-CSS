@@ -1,0 +1,151 @@
+html{
+    
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    box-sizing: border-box;
+    
+}
+@media screen and (min-width: 620px) {
+body {
+    margin: 0 auto 10px;
+    width: 93.75%;
+    max-width: 1232px;
+}
+}
+header.site-header{
+    display: block;
+    text-align: center;
+    margin: 1rem 10px 2.5rem;
+}
+.site-header{
+box-sizing: border-box;
+vertical-align:baseline;
+padding-top: 50px;
+margin-bottom: 60px;
+ 
+}
+@media screen and (min-width:800px){
+.site-header-centerpiece{
+    position: relative;
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+}
+}
+@media screen and (min-width:800px){
+.site-header-home-link{
+    margin: 0 auto 10px;
+    text-align: center;
+}
+}
+@media screen and (min-width:800px){
+.site-nav {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+}
+.site-nav-list {
+    list-style: none;
+    position: relative;
+    padding-block-start: 0;
+}
+.site-nav-item{
+    display: inline-block;
+}
+li a {
+font-size: 1rem;
+font-family: Helvetica, sans-serif;
+line-height: 2;
+font-weight: 800;
+color: #000;
+text-decoration:none;
+text-decoration-line: none; 
+
+}
+ul li :nth-child(-n+7){
+    margin-right: 10px;
+}
+
+.top-stories{
+   display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.top-stories .group1{
+    max-width:30% ;
+    float: left;
+}
+.top-stories figure{
+    max-width: inherit;
+    margin-left: 0;
+}
+.story .first-story img{
+    max-width: 300px;
+}
+
+.group-2{
+    clear: right;
+    max-width: 20%;
+    float:left;
+    margin-top:500px; 
+
+}
+.group-3{
+    margin-left:5px;
+    margin-right:5px;
+    max-width: 20%;
+    clear: right;
+    float:left;
+    margin-top:500px;
+}
+.more-stories{
+    display: block;
+    width:100%;
+    clear: both;    
+}
+.more-stories img{
+    max-width:200px;
+}
+.group-must-read , .group-sports , .group-metro{
+    float: left;
+    max-width:60%;
+    margin-right:5px;
+}
+.group-must-read{
+    width:60%;
+}
+.group-must-read .story{
+    height: 30px;
+    max-width: 20%;
+    display:inline-block;
+}
+.group-picture{
+    clear: right;
+    float:right;
+    max-width:25% ;
+}
+
+.site-footer{
+    margin-top:30px;
+    clear: both;
+    display:block;
+}
+.site-footer__list{
+    display:inline-block;
+    padding-top: 10px;
+}
+
+.site-footer__copyright{
+    text-align: center;
+    margin: 20px 0 20px 0;
+}

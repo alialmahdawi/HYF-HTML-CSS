@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    color: #333333;
+  }
+  h1, h2, h3, h4 {
+    font-family: sans-serif;
+    color: #37843f;
+  }
+  a {
+    color: inherit;
+    text-decoration-color: #37843f;
+  }
+  ol, ul {
+    list-style: none;
+    padding: 0 0 0 1.5em;
+  }
+  ul {
+    padding: 0;
+  }
+  ol li {
+    counter-increment: item;
+    position: relative;
+    margin: 0 0 0.5em;
+  }
+  ol li:before {
+    font-family: sans-serif;
+    font-weight: 700;
+    position: absolute;
+    left: -1.5em;
+    content: counter(item);
+    background-color: #37843f;
+    border-radius: 50%;
+    color: white;
+    width: 1.25em;
+    line-height: 1.25;
+    text-align: center;
+  }
+  header {
+    width: 100%;
+    height: 4em;
+    background-color: #444444;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2em;
+    line-height: 2;
+    text-align: center;
+    color: #fafafa;
+  }
+  main {
+    display: flex;
+    flex: 1;
+  }
+  .instructions {
+    width: 20em;
+    padding: 1em;
+    background-color: #fafafa;
+    border-right: 1px solid #d8d8d8;
+  }
+  .work-space {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .target {
+    height: 10vw;
+    width: 10vw;
+    background-color: #37843f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 5vw;
+  }
+  
+  /* --- Write your CSS below --- */
+  
+  
+  .target {
+    position: relative;
+    animation-name: cycle;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 4s;
+    animation-direction: alternate;
+    animation-iteration-count: 3;
+    animation-fill-mode: none;
+  }
+
+  @keyframes cycle{
+      0% {margin-right: 150px;}
+      25% {margin-bottom: 150px;}
+      50%{margin-left: 150px;}
+      75%{margin-top: 150px;}
+  }
