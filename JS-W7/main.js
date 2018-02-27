@@ -1,75 +1,83 @@
 class Movie {
     constructor(title, director) {
-      this.title = title;
-      this.director = director;
+        this.title = title;
+        this.director = director;
+        this.stars = [];
+        this.writers = [];
+        this.ratings = [];
+        this.avg = 0;
     }
-  
+
     getTitle() {
-        Movie.call(this,title);
+        return this.title;
     }
-  
+
     getDirector() {
-        Movie.call(this,director);
+        return this.director;
     }
-  
+
     addStar(star) {
-      this.star = star;
+        this.stars.push(star);
     }
-  
+
     getStars() {
-        Movie.apply(this,[star]);
+
+        return this.stars.slice();
     }
-  
+
     addWriter(writer) {
-     this.writer = writer;
+        this.writers.push(writer);
     }
-  
+
     getWriters() {
-        Movie.addWriter.call(this,writer)
+        return this.writers.slice();
     }
-  
+
     addRating(rating) {
-      this.rating = rating;
+        this.ratings.push(rating);
     }
-  
+
     getAverageRating() {
-        Movie.addRating.call(this,rating);
+
+        this.ratings.forEach(Element => this.avg += (Element) / (this.ratings.length));
+        console.log(this.avg);
     }
-  
-  }
-  
-  class StaffMember {
+
+}
+
+class StaffMember {
     constructor(name, role, dateOfBirth) {
-      this.name = name;
-      this.role = role;
-      this.dateOfBirth = dateOfBirth;
+        this.name = name;
+        this.role = role;
+        this.dateOfBirth = dateOfBirth;
+        this.movies = [];
     }
-  
+
     addMovie(movie) {
-      this.movie = movie;
+        this.movies.push(movie);
     }
-  
+
     getName() {
-      StaffMember.call(this,name);
+        return this.name;
     }
-  
+
     getRole() {
-        StaffMember.call(this,role);
+        return this.role;
     }
-  
+
     getAge() {
-        StaffMember.call(this,dateOfBirth);
+        return (2018 - this.dateOfBirth);
     }
-  }
+}
 
 
-  const myMovie = new Movie('The Count of Monte Cristo','Kevin Reynolds');
+const myMovie = new Movie('The Count of Monte Cristo', 'Kevin Reynolds');
 
-const firstActor = new StaffMember('Jim Caviezel','Edmond Dantes','1968');
+const firstActor = new StaffMember('Jim Caviezel', 'Edmond Dantes', '1968');
 myMovie.addStar(firstActor);
-const secondActor = new StaffMember('Guy Pearce','Fernand Mondego','1967');
+const secondActor = new StaffMember('Guy Pearce', 'Fernand Mondego', '1967');
 myMovie.addStar(secondActor);
- 
+
 console.log(myMovie.getStars().map(actor => `${actor.getName()} ${actor.getAge()}`));
 const director = myMovie.getDirector();
-console.log(`Director: ${director.getName()}`);
+console.log(`Director: ${director}`);
