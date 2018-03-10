@@ -1,7 +1,7 @@
 let call = document.getElementById("btn");
 call.addEventListener("click", makeRequest('https://api.github.com/orgs/HackYourFuture/repos'));
-var err = console.log('something went wrong!!');
-var res = console.log('nice job!!');
+/*var err = console.log('something went wrong!!');
+var res = console.log('nice job!!');*/
 function makeRequest(url, callback) {
     console.log('You clicked me')
     var xhr = new XMLHttpRequest();
