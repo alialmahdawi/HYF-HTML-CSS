@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    margin: 0% 5%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 1000px;
+    background-color: brown;
+}
+
+.item{
+    
+    margin: 0%;
+    flex-basis: 0;
+    height: 25%;
+}
+
+  h1 {
+    font-size: 1em;
+     display: inline;
+     max-width: 50px;
+ } 
+ h4 {
+    font-size: 1em;
+     margin: 0%;
+    display: inline;
+    max-width: 50px;
+} 
