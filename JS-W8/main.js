@@ -1,7 +1,5 @@
 let call = document.getElementById("btn");
-call.addEventListener("click", makeRequest('https://api.github.com/orgs/HackYourFuture/repos'));
-/*var err = console.log('something went wrong!!');
-var res = console.log('nice job!!');*/
+call.addEventListener("click", () => makeRequest('https://api.github.com/orgs/HackYourFuture/repos',callback));
 function makeRequest(url, callback) {
     console.log('You clicked me')
     var xhr = new XMLHttpRequest();
@@ -10,9 +8,11 @@ function makeRequest(url, callback) {
     xhr.onreadystatechange = () => {
         if (xhr.readyState == 4) {
             var response = [JSON.parse(xhr.responseText)];
+            console.log('watch out! here it comes');
+            callback(xhr.readyState);
             console.table(response[0]);
 
-           // callback(err, res);
+           
             renderDOM(response);
         }
     }
@@ -20,6 +20,8 @@ function makeRequest(url, callback) {
     var section = document.createElement('section');
     section.classList.add('container');
     document.body.appendChild(section);
+
+
     function renderDOM(repositories) {
         console.log("Rendering results");
         repositories[0].forEach(function (repository) {
@@ -32,7 +34,7 @@ function makeRequest(url, callback) {
             var full_name = document.createElement('h4');
             var Language = document.createElement('h4')
             var span = document.createElement('span');
-            name.innerHTML = repository.name;
+            name.innerHTML = (repositories[0].indexOf(repository)+1)+'-'+repository.name;
             full_name.innerHTML = repository.full_name;
             Language.innerHTML = repository.language;
             span.innerHTML = repository.id;
@@ -47,7 +49,7 @@ function makeRequest(url, callback) {
     
 }
 
-/*function callback(err, response) {
-    if (xhr.readyState == 4) { return response }
-    else { return err }
-}*/
+function callback(err, response) {
+    if (response == 4) { console.log('well done '+ response); }
+    else {console.log('something went wrong '+ response);  }
+}
